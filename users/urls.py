@@ -1,8 +1,9 @@
 from django.urls import path, include
-from .views import SignUpView
+from allauth.account.views import SignupView, LoginView, LogoutView
 
 # app_name = "users"
 urlpatterns = [
-    path("", include("allauth.urls")),
-    path("signup/", SignUpView.as_view(), name="signup"),
+    path("signin/", LoginView.as_view(), name="account_login"),
+    path("signup/", SignupView.as_view(), name="account_signup"),
+    path("signout/", LogoutView.as_view(), name="account_logout"),
 ]
