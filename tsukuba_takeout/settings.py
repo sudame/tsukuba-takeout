@@ -39,7 +39,19 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django_extensions",
+    "django.contrib.sites",
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
 ]
+
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    "django.contrib.auth.backends.ModelBackend",
+    # `allauth` specific authentication methods, such as login by e-mail
+    "allauth.account.auth_backends.AuthenticationBackend",
+)
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -115,6 +127,15 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 
+# authentication urls
 LOGIN_URL = "/users/login/"
-
 LOGOUT_REDIRECT_URL = "/"
+LOGIN_REDIRECT_URL = "/"
+
+# use email instead of username
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = "email"
+
+# site id (required for allauth)
+SITE_ID = 1
