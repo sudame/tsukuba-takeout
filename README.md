@@ -44,3 +44,20 @@ $ python manage.py runserver
 ```
 
 その他のコマンド類に関してはdjangoのドキュメントを参考にしてください。
+
+
+## Issue管理
+
+このプロジェクトではIssueタスクチケットとして管理しています。
+
+### Issueの作り方
+
+issueにはテンプレートが用意されています。テンプレートに従って入力してください。
+
+このプロジェクトのissueには、以下のようなラベルが用意されています。
+
+![](./doc/img/issues.png)
+
+接頭辞の数字順にラベルを付けると自然に分類される仕組みです。0は必要なときのみ付けてください。
+
+issueを発行した際は、Projectに `PROJECT-KANBAN` を設定してください。設定することにより、[GitHub Projects](https://github.com/sudame/tsukuba-takeout/projects/1)で自動的にタスクが管理されます。
