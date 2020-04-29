@@ -6,7 +6,7 @@ from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 
-class IndexView(generic.ListView):
+class StoreListView(generic.ListView):
     model = Store
     template_name = "food_tickets/storeList.html"
 
