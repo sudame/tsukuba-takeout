@@ -1,0 +1,5 @@
+[*]
+insert_final_newline = true
+
+[*.scss]
+tab_width = 2

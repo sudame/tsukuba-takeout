@@ -39,12 +39,26 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "sass_processor",
     "django_extensions",
     "django.contrib.sites",
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
 ]
+
+
+STATIC_URL = "/static/"
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "static/css"),
+)
+SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR, "static/css/")
+SASS_PROCESSOR_INCLUDE_FILE_PATTERN = r"^.+\.(sass|scss)$"
+SASS_PROCESSOR_INCLUDE_DIRS = [os.path.join(BASE_DIR, "styles")]
+SASS_PRECISION = 8
+SASS_OUTPUT_STYLE = "compressed"
+SASS_TEMPLATE_EXTS = [".html", ".haml"]
 
 AUTHENTICATION_BACKENDS = (
     # Needed to login by username in Django admin, regardless of `allauth`
@@ -121,11 +135,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.0/howto/static-files/
-
-STATIC_URL = "/static/"
 
 # authentication urls
 LOGIN_URL = "/users/signin/"
