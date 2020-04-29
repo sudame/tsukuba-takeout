@@ -6,8 +6,11 @@ authors = ["SUDA Mikihiro <s@sudame.net>"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
+django-allauth = "^0.41.0"
+django_extensions = "^2.2.9"
 
 [tool.poetry.dev-dependencies]
+black = "^19.10b0"
 
 [build-system]
 requires = ["poetry>=0.12"]
