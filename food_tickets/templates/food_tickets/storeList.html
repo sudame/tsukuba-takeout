@@ -15,10 +15,29 @@
         <input type="submit" value="ログアウト">
     </form>
 
-    {% for store in store_list %}
-    <div>{{ store.name }}</div>
-    <div><a href="{% url 'food_tickets:store' store.id %}">詳細</a></div>
-    {% endfor %}
+    <div class="store-list">
+        {% for store in store_list %}
+        <div class="store">
+            <div class="store--name">{{ store.name }}</div>
+            <div class="store--genres">
+                {% for genre in store.genres.all %}
+                <div class="store--genre">{{ genre }}</div>
+                {% endfor %}
+            </div>
+            <div class="store--address">{{ store.address }}</div>
+            <div class="store--opening-hours">
+                {% for opening_hour in store.opening_hours.all %}
+                <div class="store--opening-hour">
+                    {{ opening_hour.opening_time }} - {{ opening_hour.closing_time }}
+                </div>
+                {% endfor %}
+            </div>
+            <div class="store--name">{{ store.short_description }}</div>
+            <div><a href="{% url 'food_tickets:store' store.id %}">詳細</a></div>
+        </div>
+        {% endfor %}
+    </div>
+
 </body>
 
 </html>
