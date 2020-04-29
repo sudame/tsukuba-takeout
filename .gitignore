@@ -124,3 +124,6 @@ dmypy.json
 
 # virtual env
 .venv
+
+# generated css files
+static/css
