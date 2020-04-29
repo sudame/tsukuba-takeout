@@ -8,16 +8,39 @@
 </head>
 
 <body>
-    <h1>{{ store.name }}</h1>
+    <main class="store">
+        <div class="store--name">{{ store.name }}</div>
+        <div class="store--genres">
+            {% for genre in store.genres.all %}
+            <div class="store--genre">{{ genre }}</div>
+            {% endfor %}
+        </div>
+        <div class="store--address">{{ store.address }}</div>
+        <div class="store--opening-hours">
+            {% for opening_hour in store.opening_hours.all %}
+            <div class="store--opening-hour">
+                {{ opening_hour.opening_time }} - {{ opening_hour.closing_time }}
+            </div>
+            {% endfor %}
+        </div>
+        <div class="store--description">{{ store.description }}</div>
+        <div class="store--notice">{{store.notice}}</div>
 
-    <div>
-        {{ user.username }}
-    </div>
+        <div class="store--tickets">
+            <h2>Tickets</h2>
+            <div class="ticket-list">
+                {% for ticket in store.tickets.all %}
+                <div class="ticket">
+                    <div class="ticket--name">{{ ticket.name }}</div>
+                    <div class="ticket--price">{{ ticket.price }}円</div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
 
-    <h2>Tickets</h2>
-    {% for ticket in store.tickets.all %}
-    <div>{{ ticket.name }}</div>
-    {% endfor %}
+
+
 </body>
 
 </html>
