@@ -22,7 +22,7 @@
         {% csrf_token %}
         <script type="text/javascript" src="https://checkout.pay.jp/" class="payjp-button"
             data-key="pk_test_604a905dc4c045cc4c5f08b8" data-submit-text="支払う" data-text="食券を購入する"
-            data-on-created="onTokenCreated">
+            data-on-created="onTokenCreated" data-token-name="payjp_token">
             </script>
     </form>
 </body>
