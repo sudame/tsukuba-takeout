@@ -127,3 +127,6 @@ dmypy.json
 
 # generated css files
 static/css
+
+# generated javascript files
+static/javascript
