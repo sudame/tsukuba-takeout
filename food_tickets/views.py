@@ -6,6 +6,10 @@ from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
 from api.serializers import StoreSerializer
 import json
+import payjp
+import os
+
+payjp.api_key = os.getenv("PAYJP_SECRET_KEY")
 
 
 class StoreListView(generic.ListView):
@@ -40,4 +44,5 @@ class TicketBuyView(generic.DetailView, LoginRequiredMixin):
 
     def post(self, request: HttpRequest, *args, **kwargs):
         payjp_token = request.POST["payjp-token"]
-        return HttpResponse("DONE. " + request.user.username)
+        charge = payjp.Charge.create(amount=300, card=payjp_token, currency="jpy",)
+        return HttpResponse(json.dumps(charge), content_type="application/json")
