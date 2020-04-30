@@ -31,7 +31,7 @@ class StoreView(generic.DetailView):
     template_name = "food_tickets/store.html"
 
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
+        context = super().get_context_data(kwargs=kwargs)
         context["user"] = self.request.user
         return context
 
@@ -43,6 +43,11 @@ class TicketDetailView(generic.DetailView):
 class TicketBuyView(LoginRequiredMixin, generic.DetailView):
     model = Ticket
     template_name = "food_tickets/ticket_buy.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(kwargs=kwargs)
+        context["payjp_public_key"] = os.getenv("PAYJP_PUBLIC_KEY")
+        return context
 
     # TODO: NEED refactoring!!!!!!!!!!!!!!!!!
     def post(self, request: HttpRequest, *args, **kwargs):
