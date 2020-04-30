@@ -53,10 +53,10 @@ STATIC_URL = "/static/"
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
     os.path.join(BASE_DIR, "static/css"),
+    os.path.join(BASE_DIR, "styles"),
 )
 SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR, "static/css/")
 SASS_PROCESSOR_INCLUDE_FILE_PATTERN = r"^.+\.(sass|scss)$"
-SASS_PROCESSOR_INCLUDE_DIRS = [os.path.join(BASE_DIR, "styles")]
 SASS_PRECISION = 8
 SASS_OUTPUT_STYLE = "compressed"
 SASS_TEMPLATE_EXTS = [".html", ".haml"]
