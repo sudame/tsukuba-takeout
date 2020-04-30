@@ -1,5 +1,5 @@
 import React from 'react';
-import { Store } from './types';
+import { Store } from '../types';
 
 type StoreListViewItemProps = {
   store: Store;

@@ -1,7 +1,7 @@
 import reactDOM from 'react-dom';
 import React from 'react';
 import { Store } from './types';
-import StoreListView from './_StoreListView';
+import StoreListView from './components/_StoreListView';
 
 declare var storeList: Store[];
 
