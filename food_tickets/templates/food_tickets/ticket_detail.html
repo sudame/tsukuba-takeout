@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>食券詳細</h1>
+
+    <div class="ticket--name">{{ticket.name}}</div>
+    <div class="ticket--price">{{ticket.price}}円</div>
+
+    <h3>店舗からのお知らせ</h3>
+    <div>{{ticket.store.notice}}</div>
+
+    <div>
+        <a href="{% url 'food_tickets:ticket_buy' ticket.id %}" class="href">購入</a>
+    </div>
+</body>
+
+</html>
