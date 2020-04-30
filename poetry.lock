@@ -215,6 +215,18 @@ version = "0.8.0"
 
 [[package]]
 category = "main"
+description = "PAY.JP python bindings"
+name = "payjp"
+optional = false
+python-versions = "*"
+version = "0.0.5"
+
+[package.dependencies]
+requests = ">=2.7.0"
+six = ">=1.9.0"
+
+[[package]]
+category = "main"
 description = "OpenID support for modern servers and consumers."
 name = "python3-openid"
 optional = false
@@ -335,7 +347,7 @@ secure = ["certifi", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "pyOpenSSL (>=0
 socks = ["PySocks (>=1.5.6,<1.5.7 || >1.5.7,<2.0)"]
 
 [metadata]
-content-hash = "8175fd172ca44da45cef61339d6878c591507c6e748088917cd7dec124fc11b9"
+content-hash = "48d377ae442e543b356941c428cd991fa41329f298b3b4875d0b43fdccf87e2a"
 python-versions = "^3.7"
 
 [metadata.files]
@@ -428,6 +440,11 @@ oauthlib = [
 pathspec = [
     {file = "pathspec-0.8.0-py2.py3-none-any.whl", hash = "sha256:7d91249d21749788d07a2d0f94147accd8f845507400749ea19c1ec9054a12b0"},
     {file = "pathspec-0.8.0.tar.gz", hash = "sha256:da45173eb3a6f2a5a487efba21f050af2b41948be6ab52b6a1e3ff22bb8b7061"},
+]
+payjp = [
+    {file = "payjp-0.0.5-py3.6.egg", hash = "sha256:abbf4f0a0a82eb6fbc0d20cc72237efb86ebe816ea852300558754137854ff16"},
+    {file = "payjp-0.0.5.macosx-10.6-intel.tar.gz", hash = "sha256:ceb3cb88f2329047a45b9ac98534e005fb815554a3b07d2c04f96343f01fd989"},
+    {file = "payjp-0.0.5.tar.gz", hash = "sha256:73eb14d2513cab71c7848ddfeec215e7615e6cdff951a9d5c897c004938cedc0"},
 ]
 python3-openid = [
     {file = "python3-openid-3.1.0.tar.gz", hash = "sha256:628d365d687e12da12d02c6691170f4451db28d6d68d050007e4a40065868502"},

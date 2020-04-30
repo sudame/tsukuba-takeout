@@ -12,6 +12,7 @@ libsass = "^0.19.4"
 django-compressor = "^2.4"
 django-sass-processor = "^0.8"
 djangorestframework = "^3.11.0"
+payjp = "^0.0.5"
 
 [tool.poetry.dev-dependencies]
 black = "^19.10b0"

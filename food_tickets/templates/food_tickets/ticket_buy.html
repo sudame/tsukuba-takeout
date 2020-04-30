@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>食券の購入</h1>
+    <div class="ticket--name">{{ticket.name}}</div>
+    <div class="ticket--price">{{ticket.price}}円</div>
+
+    <h3>店舗からのお知らせ</h3>
+    <div>{{ticket.store.notice}}</div>
+
+    <form method="post">
+        {% csrf_token %}
+        <script type="text/javascript" src="https://checkout.pay.jp/" class="payjp-button"
+            data-key="{{payjp_public_key}}" data-submit-text="支払う" data-text="食券を購入する" data-token-name="payjp_token">
+            </script>
+    </form>
+</body>
+
+</html>

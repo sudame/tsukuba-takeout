@@ -36,6 +36,9 @@
                 <div class="ticket">
                     <div class="ticket--name">{{ ticket.name }}</div>
                     <div class="ticket--price">{{ ticket.price }}円</div>
+                    <div>
+                        <a href="{% url 'food_tickets:ticket_detail' ticket.id %}" class="href">詳細</a>
+                    </div>
                 </div>
                 {% endfor %}
             </div>
